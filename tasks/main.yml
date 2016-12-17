@@ -1,0 +1,33 @@
+---
+- include: compat.yml
+
+- include: include_vars.yml
+
+# Install EPEL
+- include: epel.yml
+  when: ansible_distribution == 'CentOS'
+
+- include: Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include: RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+# Install Monit
+- include: install_package_names.yml
+
+- name: Install zoo.cfg
+  sudo: True
+  template: >
+    src=zoo.cfg.j2
+    dest={{zookeeper_cfg_file}}
+    owner=root
+  notify: restart zookeeper
+
+- name: Install myid
+  sudo: True
+  template: >
+    src=myid.j2
+    dest={{zookeeper_myid_file}}
+    owner=root
+  notify: restart zookeeper

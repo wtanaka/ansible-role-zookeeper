@@ -1,0 +1,6 @@
+---
+package_names:
+- zookeeper
+- zookeeper-server
+zookeeper_cfg_file: /etc/zookeeper/zoo.cfg
+zookeeper_myid_file: /var/lib/zookeeper/data/myid
