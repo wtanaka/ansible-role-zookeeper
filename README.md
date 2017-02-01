@@ -29,6 +29,11 @@ Example Playbook
              # The number of ticks that can pass between
              # sending a request and getting an acknowledgement
              syncLimit: 5
+           # This variable is treated the same way as zookeeper_config
+           # currently, but is separated out so that it can be varied
+           # based on inventory while zookeeper_config can be set in
+           # group_vars
+           zookeeper_server_config:
              # specify all zookeeper servers
              # The fist port is used by followers to connect to the leader
              # The second one is used for leader election
