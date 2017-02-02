@@ -1,6 +1,0 @@
----
-- name: Create flink user
-  sudo: True
-  user:
-    name: "{{flink_user}}"
-    comment: "Flink user"
