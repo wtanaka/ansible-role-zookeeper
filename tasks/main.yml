@@ -31,3 +31,13 @@
     dest={{zookeeper_myid_file}}
     owner=root
   notify: restart zookeeper
+
+- name: Ensure zookeeper enabled
+  sudo: True
+  service: name=zookeeper enabled=yes state=started
+  # Workaround https://github.com/ansible/ansible/issues/9074
+  changed_when: False
+  # Does not work in CentOS7 or Fedora in CircleCI
+  when: not (is_integration_test is defined and
+        is_integration_test and (ansible_os_family == "RedHat" or
+           ansible_distribution == "CentOS"))
