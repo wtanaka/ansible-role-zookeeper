@@ -1,4 +1,6 @@
 ---
+zookeeper_state: started
+zookeeper_enabled: yes
 zookeeper_myid: 1
 zookeeper_config:
   # The number of milliseconds of each tick

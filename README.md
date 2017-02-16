@@ -41,6 +41,20 @@ Example Playbook
              "server.2": zookeeper2:2888:3888
              "server.3": zookeeper3:2888:3888
 
+### Other variables
+
+#### `zookeeper_state`
+
+Legal values: `started`, `stopped`, `restarted`, `reloaded`
+
+This is passed into the service task that determines the initial state of the service
+
+#### `zookeeper_enabled`
+
+Legal values: `yes`, `no`
+
+This is passed into the service task that determines whether zookeeper is enabled at computer startup
+
 License
 -------
 

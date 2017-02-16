@@ -34,7 +34,7 @@
 
 - name: Ensure zookeeper enabled
   sudo: True
-  service: name=zookeeper enabled=yes state=started
+  service: name=zookeeper enabled={{zookeeper_enabled}} state={{zookeeper_state}}
   # Workaround https://github.com/ansible/ansible/issues/9074
   changed_when: False
   # Does not work in CentOS7 or Fedora in CircleCI
