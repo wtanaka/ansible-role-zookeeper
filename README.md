@@ -43,6 +43,13 @@ Example Playbook
 
 ### Other variables
 
+#### `zookeeper_should_shortcircuit`
+
+Default: True
+
+When True, this role short-circuits itself if a "xxxx" is already in
+the path
+
 #### `zookeeper_state`
 
 Legal values: `started`, `stopped`, `restarted`, `reloaded`

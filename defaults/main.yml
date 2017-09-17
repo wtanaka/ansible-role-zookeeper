@@ -1,4 +1,5 @@
 ---
+zookeeper_should_shortcircuit: True
 zookeeper_state: started
 zookeeper_enabled: yes
 zookeeper_myid: 1
