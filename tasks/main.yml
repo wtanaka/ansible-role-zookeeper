@@ -23,7 +23,6 @@
 - include: RedHat.yml
   when: ansible_os_family == 'RedHat'
 
-# Install Monit
 - include: install_package_names.yml
 
 - name: Install zoo.cfg
